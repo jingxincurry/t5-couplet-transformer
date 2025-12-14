@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>对联生成器</title>
+<style>
+    body {
+        background: #f5f6fa;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .card {
+        width: 600px;
+        background: white;
+        padding: 25px 35px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h2 {
+        
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 600;
+        color: #2d3436;
+    }
+    input {
+        width: 100%;
+        height: 45px;
+        font-size: 16px;
+        padding: 10px;
+        border: 1px solid #dcdde1;
+        border-radius: 8px;
+        outline: none;
+    }
+    button {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        font-size: 17px;
+        background: #0984e3;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    button:hover {
+        background: #74b9ff;
+    }
+    .result-box {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #ecf0f1;
+        font-size: 18px;
+        min-height: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>对联生成器（上联 → 下联）</h2>
+    <p>DEBUG: 新的</p>
+    <input id="inputText" placeholder="请输入上联，如：春风得意马蹄疾"/>
+    <button onclick="generate()">生成下联</button>
+
+    <div class="result-box" id="resultBox"></div>
+</div>
+
+<script>
+function generate() {
+    let text = document.getElementById("inputText").value;
+    let resultBox = document.getElementById("resultBox");
+
+    if (!text.trim()) {
+        resultBox.innerHTML = "请输入上联！";
+        return;
+    }
+
+    resultBox.innerHTML = "生成中，请稍候…";
+
+    fetch(`/api/generate?text=${encodeURIComponent(text)}`)
+        .then(res => res.json())
+        .then(data => {
+            resultBox.innerHTML = data.couplet;
+        })
+        .catch(err => {
+            resultBox.innerHTML = "请求失败：" + err;
+        });
+}
+</script>
+
+</body>
+</html>
