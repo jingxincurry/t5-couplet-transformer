@@ -1,5 +1,3 @@
-# README.md
-
 # Couplet-Transformer-T5
 
 # 1.概述
@@ -55,7 +53,7 @@ COUPLET-TRANSFORMER-T5
 pip install -r requirements.txt
 ```
 
-## 4. 数据集准备 Dataset
+# 4. 数据集准备 Dataset
 
 本项目使用公开的中文对联数据集：
 
@@ -68,7 +66,7 @@ pip install -r requirements.txt
 
 使用公开中文对联数据集[couplet-dataset](https://github.com/wb14123/couplet-dataset)
 
-## 5.预训练模型
+# 5.预训练模型
 
 项目支持直接微调已公开的中文对联 T5 预训练模型：
 
@@ -84,7 +82,7 @@ huggingface-cli download shibing624/t5-chinese-couplet \
 
 ```
 
-## 6. 模型训练 Training
+# 6. 模型训练 Training
 
 运行以下命令：
 
@@ -99,14 +97,14 @@ python src/train.py
 tensorboard --logdir=./logs
 ```
 
-## 8. 命令行预测 CLI Prediction
+# 7. 命令行预测 CLI Prediction
 
 ```bash
 python src/predict.py
 
 ```
 
-## 9. Web 前端服务 Web UI
+# 8. Web 前端服务 Web UI
 
 使用 Uvicorn 启动：
 
@@ -123,7 +121,7 @@ http://localhost:8000
 
 ---
 
-# 10.输出示例
+# 9.输出示例
 
 ---
 
