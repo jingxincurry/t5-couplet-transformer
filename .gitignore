@@ -7,6 +7,7 @@ data/raw/*.rar
 
 
 data/processed/
+!data/processed/.gitkeep
 *.arrow
 
 
@@ -25,6 +26,7 @@ models/*
 !models/.gitkeep
 
 pretrained/
+!pretrained/.gitkeep
 
 .vscode/
 .gradio/
