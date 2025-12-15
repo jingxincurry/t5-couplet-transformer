@@ -58,7 +58,7 @@ pip install -r requirements.txt
 本项目使用公开的中文对联数据集：
 
 - **couplet-dataset**
-    
+  
     [https://github.com/wb14123/couplet-dataset](https://github.com/wb14123/couplet-dataset)
     
 
@@ -81,6 +81,8 @@ huggingface-cli download shibing624/t5-chinese-couplet \
     --resume-download
 
 ```
+
+epoch = 15次训练模型、t5-chinese-couplet、couplet-dataset 百度网盘资源[密码p7j5]( https://pan.baidu.com/s/1UducFGQc2nx5aTWrY7UFAw?pwd=p7j5)
 
 # 6. 模型训练 Training
 
@@ -119,11 +121,9 @@ uvicorn src.app:app --reload --host 0.0.0.0 --port 8000
 http://localhost:8000
 ```
 
----
 
 # 9.输出示例
 
----
 
 以下是模型生成的部分示例结果：
 
