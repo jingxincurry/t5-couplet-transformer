@@ -6,7 +6,7 @@ data/raw/*.7z
 data/raw/*.rar
 
 
-data/processed/
+data/processed/*
 !data/processed/.gitkeep
 *.arrow
 
@@ -25,8 +25,9 @@ logs/*
 models/*
 !models/.gitkeep
 
-pretrained/
+pretrained/*
 !pretrained/.gitkeep
+
 
 .vscode/
 .gradio/
