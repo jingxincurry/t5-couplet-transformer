@@ -21,7 +21,7 @@
 👉[https://coupletai.xyz/](https://coupletai.xyz/)（对联生成器）
 
 # 2.项目结构
-
+```bash
 COUPLET-TRANSFORMER-T5
 │
 ├── data/                 # 数据集（上联/下联）
@@ -42,6 +42,7 @@ COUPLET-TRANSFORMER-T5
 ├── static/               # Web 前端静态资源
 ├── requirements.txt
 └── [README.md](http://readme.md/)
+```
 
 # 3.环境配置
 
