@@ -71,6 +71,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # 首页路由
 @app.get("/")
+@app.head("/")
 async def index():
     return FileResponse("static/index.html")
 
